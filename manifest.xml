@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<OfficeApp
-  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
-  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
-  xsi:type="MessageReadCommandSurface">
-
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xsi:type="MessageReadCommandSurface">
   <Id>a1b2c3d4-e5f6-7890-abcd-ef1234567890</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Felicity Maralit</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Email Open Tracker"/>
   <Description DefaultValue="Tracks when emails are opened and logs to Google Sheets"/>
-
   <Hosts>
     <Host Name="Mailbox"/>
   </Hosts>
-
   <Requirements>
     <Sets>
       <Set Name="Mailbox" MinVersion="1.1"/>
     </Sets>
   </Requirements>
-
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
@@ -31,13 +22,10 @@
       </DesktopSettings>
     </Form>
   </FormSettings>
-
   <Permissions>ReadItem</Permissions>
-
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
   </Rule>
-
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Requirements>
       <bt:Sets DefaultMinVersion="1.3">
@@ -88,4 +76,8 @@
         <bt:String id="TaskpaneButton.Label" DefaultValue="Track This Email"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="TaskpaneButton.Tooltip" Def
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Log this email open to Google Sheets"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
